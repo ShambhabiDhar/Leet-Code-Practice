@@ -11,12 +11,12 @@ public:
                 ptri[1] = {1, 1};
             }
             else{
-                ptri[i - 1].push_back(1);
+                ptri[i - 1].push_back(1); // for first element 
                 for(int j = 1; j < i - 1; j++){
                     int val = ptri[i - 2][j - 1] + ptri[i - 2][j];
                     ptri[i - 1].push_back(val);
                 }
-                ptri[i - 1].push_back(1);
+                ptri[i - 1].push_back(1); // for last element 
             }
         }
         return ptri;
