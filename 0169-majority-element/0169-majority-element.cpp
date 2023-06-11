@@ -8,6 +8,7 @@ public:
         int el; // Element
 
         //applying the algorithm:
+        // to store most frequent elemnet
         for (int i = 0; i < n; i++) {
             if (cnt == 0) {
                 cnt = 1;
