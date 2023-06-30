@@ -1,0 +1,22 @@
+// Find minimum number of coins: https://takeuforward.org/data-structure/find-minimum-number-of-coins/
+// https://www.codingninjas.com/studio/problems/975277?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=1
+
+#include <bits/stdc++.h> 
+int findMinimumCoins(int amount) 
+{
+    // Write your code here
+    vector<int> v={1000,500,100,50,20,10,5,2,1};
+    int n=v.size();
+    int rem=amount;
+    int coins=0;
+    int i=0;
+    while(rem>=0 && i<n){
+        int given=rem/v[i] ;
+        if(given!=0){
+            coins=coins+given;
+            rem=rem-(given*v[i]);
+        }
+        i++;
+    }
+    return coins;
+}
