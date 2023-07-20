@@ -24,7 +24,7 @@ private:
 
         if (!root->left && !root->right) {
             path += to_string(root->val);
-            result.push_back(path);
+            result.emplace_back(path);
             return;
         }
 
