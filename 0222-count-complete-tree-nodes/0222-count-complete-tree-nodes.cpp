@@ -16,9 +16,11 @@ public:
         if(root==nullptr) return 0;
         int lh=leftht(root);
         int rh=rightht(root);
-        if(lh==rh) return (1<<lh)-1 ;
+        if(lh==rh) return (1<<lh)-1 ; 
         return 1+countNodes(root->left)+countNodes(root->right);
     }
+
+    //<< means that the left-hand operand is multiplied by 2, for as many times as the number in the right-hand operand. E.g. 1 << 3 means 1*2*2*2. 
     
     int leftht(TreeNode* node){
         int cnt=0;
