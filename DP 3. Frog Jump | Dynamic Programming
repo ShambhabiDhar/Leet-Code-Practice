@@ -1,0 +1,21 @@
+// DP3 : Frog Jump | Dynamic Programming | Learn to write 1D DP
+// https://youtu.be/EgG3jsGoPvQ
+// https://www.codingninjas.com/studio/problems/frog-jump_3621012?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=1
+
+#include <bits/stdc++.h> 
+int frogJump(int n, vector<int> &heights)
+{
+    // Write your code here.
+    int prev1=0, prev2=0;
+    for(int i=1; i<n; i++){
+        int fs = prev1 + abs(heights[i]-heights[i-1]);
+        int ss = INT_MAX;
+        if(i>1){
+            ss = prev2 + abs(heights[i]-heights[i-2]);
+        }
+        int cur=min(fs,ss);
+        prev2=prev1;
+        prev1=cur;
+    }
+    return prev1;
+}
